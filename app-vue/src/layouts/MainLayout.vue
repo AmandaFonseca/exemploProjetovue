@@ -18,11 +18,8 @@
 
         <scrollactive
           ref="scrollactive"
-          :offset="offset"
-          :always-track="alwaysTrack"
-          :duration="duration"
-          :click-to-scroll="clickToScroll"
-          :bezier-easing-value="easing"
+          :offset="20"
+          :duration="200"
           ><ul
             class="nav-center menu-top"
             style="
@@ -33,16 +30,16 @@
             "
           >
             <li>
-              <a href="#banner" class="scrollactive-item nav-item">Banner</a>
+              <a :href="`${this.urllocal}/#banner`" class="scrollactive-item nav-item">Banner</a>
             </li>
             <li>
-              <a href="#sobre" class="scrollactive-item nav-item">Sobre</a>
+              <a :href="`${this.urllocal}/#sobre`" class="scrollactive-item nav-item">Sobre</a>
             </li>
             <li>
-              <a href="#skills" class="scrollactive-item nav-item">Skills</a>
+              <a :href="`${this.urllocal}/#skills`" class="scrollactive-item nav-item">Skills</a>
             </li>
             <li>
-              <a href="#contatos" class="scrollactive-item nav-item"
+              <a :href="`${this.urllocal}/#contatos`" class="scrollactive-item nav-item"
                 >Contatos</a
               >
             </li>
@@ -191,30 +188,32 @@ ul.nav-lateral li a {
 <script lang="ts">
 import EssentialLink from "components/EssentialLink.vue";
 
+var url =  window.location.origin;
+url = `${url}/`
 const linksData = [
   {
     title: "Banner",
     caption: "quasar.dev",
     icon: "school",
-    link: "#banner",
+    link: `${url}#banner`,
   },
   {
     title: "Sobre",
     caption: "github.com/quasarframework",
     icon: "code",
-    link: "#sobre",
+    link: `${url}#sobre`,
   },
   {
     title: "Skills",
     caption: "chat.quasar.dev",
     icon: "chat",
-    link: "#skills",
+    link: `${url}#skills`,
   },
   {
     title: "Contatos",
     caption: "forum.quasar.dev",
     icon: "record_voice_over",
-    link: "#contatos",
+    link: `${url}#contatos`,
   }
 ];
 
@@ -225,6 +224,7 @@ export default {
     return {
       leftDrawerOpen: false,
       essentialLinks: linksData,
+      urllocal: window.location.origin,
     };
   },
 };

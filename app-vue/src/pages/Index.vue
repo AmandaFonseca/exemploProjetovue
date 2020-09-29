@@ -189,9 +189,9 @@
                 </div>
               </q-card-section>
 
-              <q-card-section class="q-pt-none">
+              <!--<q-card-section class="q-pt-none">
                 {{ lorem }}
-              </q-card-section>
+              </q-card-section>-->
             </q-card>
           </div>
         </div>
