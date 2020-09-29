@@ -7,9 +7,9 @@
             <q-parallax id="parallax" src="../assets/computer.jpg">
               <div class="rise-text">
                 <h1>Amanda Fonseca</h1>
-                <h6>
-                  <strong>Desenvolvedora de front-end/ Web design</strong>
-                </h6>
+                <h5>
+                  Desenvolvedora de front-end/ Web design
+                </h5>
               </div>
             </q-parallax>
           </div>
