@@ -97,41 +97,22 @@
       v-model="leftDrawerOpen"
       show-if-above
       bordered
-      content-class=""
       content-class="bg-grey-1"
     >
       <q-list>
-        <!--<q-item-label header class="text-grey-8"> Links </q-item-label>-->
-        <scrollactive
-          ref="scrollactive"
-          :offset="offset"
-          :always-track="alwaysTrack"
-          :duration="duration"
-          :click-to-scroll="clickToScroll"
-          :bezier-easing-value="easing"
+        <q-item-label
+          header
+          class="text-grey-8"
         >
-          <ul class="nav-lateral">
-            <li>
-              <a href="#banner" class="scrollactive-item nav-item">Banner</a>
-            </li>
-            <q-separator dark horinzontal />
-            <li>
-              <a href="#sobre" class="scrollactive-item nav-item">Sobre</a>
-            </li>
-            <q-separator dark horinzontal />
-            <li>
-              <a href="#skills" class="scrollactive-item nav-item">Skills</a>
-            </li>
-            <q-separator dark horinzontal />
-            <li>
-              <a href="#contatos" class="scrollactive-item nav-item"
-                >Contatos</a
-              >
-            </li>
-          </ul>
-        </scrollactive>
+        </q-item-label>
+        <EssentialLink
+          v-for="link in essentialLinks"
+          :key="link.title"
+          v-bind="link"
+        />
       </q-list>
     </q-drawer>
+
 
     <q-page-container>
       <router-view />
@@ -167,7 +148,7 @@ ul.nav-center.menu-top li a {
   display: none;
   color: white;
 }
-scrollactive ul li a:hover {
+scrollactive .menu-top li a:hover {
   background-color: pink;
   color: white;
   color: #6d6d6d;
@@ -212,47 +193,29 @@ import EssentialLink from "components/EssentialLink.vue";
 
 const linksData = [
   {
-    title: "Docs",
+    title: "Banner",
     caption: "quasar.dev",
     icon: "school",
-    link: "https://quasar.dev",
+    link: "#banner",
   },
   {
-    title: "Github",
+    title: "Sobre",
     caption: "github.com/quasarframework",
     icon: "code",
-    link: "https://github.com/quasarframework",
+    link: "#sobre",
   },
   {
-    title: "Discord Chat Channel",
+    title: "Skills",
     caption: "chat.quasar.dev",
     icon: "chat",
-    link: "https://chat.quasar.dev",
+    link: "#skills",
   },
   {
-    title: "Forum",
+    title: "Contatos",
     caption: "forum.quasar.dev",
     icon: "record_voice_over",
-    link: "https://forum.quasar.dev",
-  },
-  {
-    title: "Twitter",
-    caption: "@quasarframework",
-    icon: "rss_feed",
-    link: "https://twitter.quasar.dev",
-  },
-  {
-    title: "Facebook",
-    caption: "@QuasarFramework",
-    icon: "public",
-    link: "https://facebook.quasar.dev",
-  },
-  {
-    title: "Quasar Awesome",
-    caption: "Community Quasar projects",
-    icon: "favorite",
-    link: "https://awesome.quasar.dev",
-  },
+    link: "#contatos",
+  }
 ];
 
 export default {
