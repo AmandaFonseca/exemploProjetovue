@@ -173,10 +173,20 @@ li {
 ul.nav-lateral li a {
   color: #ff9999;
 }
-@media (min-width: 22em) {
+
+@media (max-width: 762px) {
+  scrollactive,.q-toolbar__title.ellipsis {
+    display: none;  
+  }
+}
+@media (min-width: 762px) {
+    scrollactive,.q-toolbar__title.ellipsis {
+    display: inline-block;  
+  }
 }
 
 @media (min-width: 68em) {
+
   ul.nav-center.menu-top li a {
     display: inline-block;
   }
