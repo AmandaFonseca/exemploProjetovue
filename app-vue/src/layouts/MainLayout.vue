@@ -3,7 +3,7 @@
     <q-header elevated>
       <q-toolbar class="colornew">
         <Slide class="slider" style="background-color: #dfdfdf!important">
-          <a id="banner" href="#banner">
+          <a id="banner" href="#logo-banner">
             <span>Banner</span>
           </a>
           <a id="Sobre" href="#sobre">
@@ -21,7 +21,82 @@
           <img src="../assets/logoamanda.png" />
         </q-avatar>
         <q-toolbar-title> Amanda Fonseca </q-toolbar-title>
+
+
+        <scrollactive
+          ref="scrollactive"
+          :offset="offset"
+          :always-track="alwaysTrack"
+          :duration="duration"
+          :click-to-scroll="clickToScroll"
+          :bezier-easing-value="easing"
+          ><ul
+            class="nav-center"
+            style="
+              padding: 0px;
+              margin: 0px;
+              list-style: none;
+              display: inline-flex;
+            "
+          >
+            <li>
+              <a href="#logo-banner" class="scrollactive-item nav-item">Banner</a>
+            </li>
+            <li>
+              <a href="#sobre" class="scrollactive-item nav-item">Sobre</a>
+            </li>
+            <li>
+              <a href="#skills" class="scrollactive-item nav-item">Skills</a>
+            </li>
+            <li>
+              <a href="#contatos" class="scrollactive-item nav-item"
+                >Contatos</a
+              >
+            </li>
+          </ul>
+        </scrollactive>
+        <ul
+          class="nav-center-midia"
+          style="
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+            display: inline-flex;
+          "
+        >
+          <li>
+            <a
+              class="whatsap"
+              href="https://api.whatsapp.com/send?phone=5511989743490"
+              target="_blank"
+              ><i class="fa fa-whatsapp"></i
+            ></a>
+          </li>
+          <li>
+            <a class="instagram" href="#"
+              ><i class="fa fa-instagram" target="_blank"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              class="linkedin"
+              href="https://www.linkedin.com/in/amanda-fonseca-12b578101/"
+              target="_blank"
+              ><i class="fa fa-linkedin"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              class="github"
+              href="https://github.com/AmandaFonseca"
+              target="_blank"
+              ><i class="fa fa-github"></i
+            ></a>
+          </li>
+        </ul>
+
       </q-toolbar>
+      
     </q-header>
 
     <q-page-container>
@@ -39,6 +114,9 @@ span.bm-burger-bars.line-style {
   position: absolute;
   left: 0%;
 
+}
+li a {
+    color: white;
 }
 .colornew {
   background: #ff9999;

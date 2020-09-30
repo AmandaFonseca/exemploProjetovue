@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex-center">
     <div id="q-app">
-      <section id="banner" class="section hero is-primary is-fullheight">
+      <section id="logo-banner" class="section hero is-primary is-fullheight">
         <div class="q-gutter-md">
           <div class="row justify-between">
             <q-parallax id="parallax" src="../assets/computer.jpg">
