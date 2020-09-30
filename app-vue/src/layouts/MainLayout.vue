@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar class="colornew">
-        <Slide class="slider" style="background-color: #dfdfdf!important">
+        <Slide :closeOnNavigation="true" class="slider" style="background-color: #dfdfdf!important">
           <a id="banner" href="#logo-banner">
             <span>Banner</span>
           </a>
@@ -231,5 +231,8 @@ export default {
       urllocal: window.location.origin,
     };
   },
+  methods:{
+  
+  }
 };
 </script>
