@@ -2,114 +2,27 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar class="colornew">
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="leftDrawerOpen = !leftDrawerOpen"
-        />
+        <Slide class="slider" style="background-color: #dfdfdf!important">
+          <a id="banner" href="#banner">
+            <span>Banner</span>
+          </a>
+          <a id="Sobre" href="#sobre">
+            <span>Sobre</span>
+          </a>
+          <a id="Skills" href="#skills">
+            <span>Skills</span>
+          </a>
+          <a id="Contatos" href="#contatos">
+            <span>Contatos</span>
+          </a>
+        </Slide>
 
-        <q-avatar class="foto">
+        <q-avatar class="foto" style="margin-left:2em;">
           <img src="../assets/logoamanda.png" />
         </q-avatar>
         <q-toolbar-title> Amanda Fonseca </q-toolbar-title>
-
-        <scrollactive
-          ref="scrollactive"
-          :offset="20"
-          :duration="200"
-          ><ul
-            class="nav-center menu-top"
-            style="
-              padding: 0px;
-              margin: 0px;
-              list-style: none;
-              display: inline-flex;
-            "
-          >
-            <li>
-              <a :href="`${this.urllocal}/#banner`" class="scrollactive-item nav-item">Banner</a>
-            </li>
-            <li>
-              <a :href="`${this.urllocal}/#sobre`" class="scrollactive-item nav-item">Sobre</a>
-            </li>
-            <li>
-              <a :href="`${this.urllocal}/#skills`" class="scrollactive-item nav-item">Skills</a>
-            </li>
-            <li>
-              <a :href="`${this.urllocal}/#contatos`" class="scrollactive-item nav-item"
-                >Contatos</a
-              >
-            </li>
-          </ul>
-        </scrollactive>
-
-        <ul
-          class="nav-center-midia"
-          style="
-            padding: 0px;
-            margin: 0px;
-            list-style: none;
-            display: inline-flex;
-          "
-        >
-          <li>
-            <a
-              class="whatsap"
-              href="https://api.whatsapp.com/send?phone=5511989743490"
-              target="_blank"
-              ><i class="fa fa-whatsapp"></i
-            ></a>
-          </li>
-          <li>
-            <a class="instagram" href="#"
-              ><i class="fa fa-instagram" target="_blank"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              class="linkedin"
-              href="https://www.linkedin.com/in/amanda-fonseca-12b578101/"
-              target="_blank"
-              ><i class="fa fa-linkedin"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              class="github"
-              href="https://github.com/AmandaFonseca"
-              target="_blank"
-              ><i class="fa fa-github"></i
-            ></a>
-          </li>
-        </ul>
-
-        <!--<div>Quasar v{{ $q.version }}</div>-->
       </q-toolbar>
     </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      content-class="bg-grey-1"
-    >
-      <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-        </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
-
 
     <q-page-container>
       <router-view />
@@ -118,6 +31,15 @@
 </template>
 
 <style scoped>
+span.bm-burger-bars.line-style {
+    background-color: white;
+}
+.slider {
+  top: -50%;
+  position: absolute;
+  left: 0%;
+
+}
 .colornew {
   background: #ff9999;
 }
@@ -174,7 +96,6 @@ ul.nav-lateral li a {
   color: #ff9999;
 }
 @media (min-width: 22em) {
-
 }
 
 @media (min-width: 68em) {
@@ -182,14 +103,19 @@ ul.nav-lateral li a {
     display: inline-block;
   }
 }
+
+.bm-burger-button {
+  top: 10px !important;
+  width: 36px;
+}
 </style>co
 
 
 <script lang="ts">
 import EssentialLink from "components/EssentialLink.vue";
-
-var url =  window.location.origin;
-url = `${url}/`
+import { Slide } from "vue-burger-menu";
+var url = window.location.origin;
+url = `${url}/`;
 const linksData = [
   {
     title: "Banner",
@@ -214,12 +140,12 @@ const linksData = [
     caption: "forum.quasar.dev",
     icon: "record_voice_over",
     link: `${url}#contatos`,
-  }
+  },
 ];
 
 export default {
   name: "MainLayout",
-  components: { EssentialLink },
+  components: { EssentialLink, Slide },
   data() {
     return {
       leftDrawerOpen: false,
