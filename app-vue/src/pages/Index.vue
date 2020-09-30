@@ -80,12 +80,13 @@
     </div>
 
     <div id="q-app">
-    <section id="skills" class="section hero is-primary is-fullheight">
-      <div class="column" style="">
-        <div class="col col-sub-titulo">
-          <img class="sub-titulo" src="../assets/logoamandadefinition.png" />
-          <h3 class="titulo">Skills</h3>
-        </div>
+      <section id="skills" class="section hero is-primary is-fullheight">
+        <div class="column" style="">
+          <div class="col col-sub-titulo">
+            <img class="sub-titulo" src="../assets/logoamandadefinition.png" />
+            <h3 class="titulo">Skills</h3>
+          </div>
+
 
         <div class="row row-card">
           <div
@@ -129,7 +130,7 @@
             @mouseover="hoverCard(index)"
             @mouseout="hoverCard(-1)"
           >
-            <template v-if="index > 3 && index <= 6">
+          <template v-if="index > 3 && index <= 6">
               <div class="col card">
                 <a :href="card.site" target="_blank">
                   <img
@@ -154,8 +155,10 @@
             </template>
           </div>
         </div>
-      </div>
-    </section>
+
+
+        </div>
+      </section>
     </div>
 
 
@@ -450,8 +453,10 @@ h3.titulo {
 .copyright-text {
   margin: 0;
 }
-
-
+.card-box {
+    border: 1px solid red;
+    margin: auto;
+}
 
 @media (max-width: 762px) {
   .row > .col-6,
@@ -462,17 +467,19 @@ h3.titulo {
   div#texto {
     text-align: center;
   }
-  .row.row-card {
-    margin: auto;
-    width: 50%;
+.row.row-card div {
+    /* border: 1px solid red; */
+    width: 90%;
+    /* margin: auto; */
+    /* margin-bottom: 1em; */
+    margin-left: 5%;
 }
 }
 
 @media (min-width: 991px) {
   .row.row-card {
     margin: auto;
-
-}
+  }
 
   div#texto {
     text-align: initial;
